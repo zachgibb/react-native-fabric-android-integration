@@ -7,7 +7,9 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.facebook.common.logging;
+package com.awesomeproject;
+
+import com.facebook.common.logging.LoggingDelegate;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -17,18 +19,18 @@ import android.util.Log;
 /**
  * Default implementation of {@link LoggingDelegate}.
  */
-public class FLogDefaultLoggingDelegate implements LoggingDelegate {
+public class ReactNativeFabricLogger implements LoggingDelegate {
 
-  public static final FLogDefaultLoggingDelegate sInstance = new FLogDefaultLoggingDelegate();
+  public static final ReactNativeFabricLogger sInstance = new ReactNativeFabricLogger();
 
   private String mApplicationTag = "unknown";
   private int mMinimumLoggingLevel = Log.WARN;
 
-  public static FLogDefaultLoggingDelegate getInstance() {
+  public static ReactNativeFabricLogger getInstance() {
     return sInstance;
   }
 
-  private FLogDefaultLoggingDelegate() {
+    private ReactNativeFabricLogger() {
   }
 
   /**
