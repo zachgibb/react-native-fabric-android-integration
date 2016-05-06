@@ -7,7 +7,15 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.facebook.common.logging.FLog;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+
 public class MainActivity extends ReactActivity {
+    public void onCreate() {
+      Fabric.with(this, new Crashlytics());
+      FLog.setLoggingDelegate(ReactNativeFabricLogger.getInstance());
+    }
 
     /**
      * Returns the name of the main component registered from JavaScript.
